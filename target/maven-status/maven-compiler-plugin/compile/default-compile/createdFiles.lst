@@ -33,6 +33,7 @@ gui\Inicio$7.class
 gui\Inicio$37.class
 gui\Inicio$30.class
 gui\Inicio$27.class
+gui\Inicio$60.class
 persistencia\ControladoraPersistencia.class
 persistencia\MascotaJpaController.class
 logica\Empresa.class

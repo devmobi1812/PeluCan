@@ -56,6 +56,8 @@ public class Whatsapp extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Mensaje de WhatsApp");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(232, 232, 232));
 
@@ -67,7 +69,7 @@ public class Whatsapp extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(37, 37, 37));
-        jLabel1.setText("Celular");
+        jLabel1.setText("Celular (solo numeros con codigo de area)");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(37, 37, 37));
