@@ -5,6 +5,8 @@
 package gui;
 
 import com.formdev.flatlaf.FlatLightLaf;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
@@ -33,6 +35,7 @@ import logica.MascotaController;
 import logica.Turno;
 import logica.TurnoController;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -58,6 +61,7 @@ public class Inicio extends javax.swing.JFrame {
             
             UIManager.setLookAndFeel(new FlatLightLaf());
             initComponents();
+            setIconImage(getIconImage());
             datosIniciales();
             agregarListeners();
             setComboBox();
@@ -66,6 +70,13 @@ public class Inicio extends javax.swing.JFrame {
             Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
         }
         cargarPantalla(this.panelInicial);
+    }
+    
+    //ICONO DEL JFRAME
+    @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/logo.png"));
+        return retValue;
     }
 
     private void setComboBox(){
@@ -371,7 +382,12 @@ public class Inicio extends javax.swing.JFrame {
         txtWhatsappConfiguracion = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridLayout());
+        setTitle("PeluCan versión 1.0");
+        setIconImages(null);
+        setMaximumSize(new java.awt.Dimension(835, 632));
+        setMinimumSize(new java.awt.Dimension(835, 632));
+        setResizable(false);
+        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -398,6 +414,11 @@ public class Inicio extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(232, 232, 232));
         jLabel3.setToolTipText("");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout btnInicioLayout = new javax.swing.GroupLayout(btnInicio);
         btnInicio.setLayout(btnInicioLayout);
@@ -857,71 +878,71 @@ public class Inicio extends javax.swing.JFrame {
         jLabel19.setForeground(new java.awt.Color(37, 37, 37));
 
         txtDiaHoy.setEditable(false);
-        txtDiaHoy.setBackground(new java.awt.Color(232, 232, 232));
         txtDiaHoy.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtDiaHoy.setForeground(new java.awt.Color(37, 37, 37));
         txtDiaHoy.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtDiaHoy.setBackground(new java.awt.Color(232, 232, 232));
         txtDiaHoy.setBorder(null);
+        txtDiaHoy.setForeground(new java.awt.Color(37, 37, 37));
         txtDiaHoy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDiaHoyActionPerformed(evt);
             }
         });
 
-        jLabel58.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel58.setForeground(new java.awt.Color(37, 37, 37));
         jLabel58.setText("Cantidad de turnos para hoy");
+        jLabel58.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(37, 37, 37));
 
         txtCantTurnosHoy.setEditable(false);
-        txtCantTurnosHoy.setBackground(new java.awt.Color(232, 232, 232));
         txtCantTurnosHoy.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtCantTurnosHoy.setForeground(new java.awt.Color(37, 37, 37));
         txtCantTurnosHoy.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtCantTurnosHoy.setBackground(new java.awt.Color(232, 232, 232));
         txtCantTurnosHoy.setBorder(null);
+        txtCantTurnosHoy.setForeground(new java.awt.Color(37, 37, 37));
 
-        jLabel59.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel59.setForeground(new java.awt.Color(37, 37, 37));
         jLabel59.setText("Cantidad de turnos para mañana");
+        jLabel59.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(37, 37, 37));
 
         txtCantTurnosMan.setEditable(false);
-        txtCantTurnosMan.setBackground(new java.awt.Color(232, 232, 232));
         txtCantTurnosMan.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtCantTurnosMan.setForeground(new java.awt.Color(37, 37, 37));
         txtCantTurnosMan.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtCantTurnosMan.setBackground(new java.awt.Color(232, 232, 232));
         txtCantTurnosMan.setBorder(null);
+        txtCantTurnosMan.setForeground(new java.awt.Color(37, 37, 37));
 
         txtCantClientes.setEditable(false);
-        txtCantClientes.setBackground(new java.awt.Color(232, 232, 232));
         txtCantClientes.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtCantClientes.setForeground(new java.awt.Color(37, 37, 37));
         txtCantClientes.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtCantClientes.setBackground(new java.awt.Color(232, 232, 232));
         txtCantClientes.setBorder(null);
+        txtCantClientes.setForeground(new java.awt.Color(37, 37, 37));
 
-        jLabel60.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel60.setForeground(new java.awt.Color(37, 37, 37));
         jLabel60.setText("Cantidad de clientes registrados");
+        jLabel60.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(37, 37, 37));
 
         txtCantMascotas.setEditable(false);
-        txtCantMascotas.setBackground(new java.awt.Color(232, 232, 232));
         txtCantMascotas.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtCantMascotas.setForeground(new java.awt.Color(37, 37, 37));
         txtCantMascotas.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtCantMascotas.setBackground(new java.awt.Color(232, 232, 232));
         txtCantMascotas.setBorder(null);
+        txtCantMascotas.setForeground(new java.awt.Color(37, 37, 37));
 
-        jLabel61.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel61.setForeground(new java.awt.Color(37, 37, 37));
         jLabel61.setText("Cantidad de mascotas registradas");
+        jLabel61.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(37, 37, 37));
 
-        jLabel62.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel62.setForeground(new java.awt.Color(37, 37, 37));
         jLabel62.setText("Cantidad de turnos historicos");
+        jLabel62.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(37, 37, 37));
 
         txtCantTurnosHistory.setEditable(false);
-        txtCantTurnosHistory.setBackground(new java.awt.Color(232, 232, 232));
         txtCantTurnosHistory.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtCantTurnosHistory.setForeground(new java.awt.Color(37, 37, 37));
         txtCantTurnosHistory.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtCantTurnosHistory.setBackground(new java.awt.Color(232, 232, 232));
         txtCantTurnosHistory.setBorder(null);
+        txtCantTurnosHistory.setForeground(new java.awt.Color(37, 37, 37));
 
         javax.swing.GroupLayout panelInicialLayout = new javax.swing.GroupLayout(panelInicial);
         panelInicial.setLayout(panelInicialLayout);
@@ -949,7 +970,7 @@ public class Inicio extends javax.swing.JFrame {
         panelInicialLayout.setVerticalGroup(
             panelInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInicialLayout.createSequentialGroup()
-                .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtDiaHoy, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1857,24 +1878,24 @@ public class Inicio extends javax.swing.JFrame {
 
         panelConfiguracion.setBackground(new java.awt.Color(232, 232, 232));
 
+        jLabel47.setText("Configuración");
         jLabel47.setBackground(new java.awt.Color(37, 37, 37));
         jLabel47.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(37, 37, 37));
-        jLabel47.setText("Configuración");
 
+        jLabel49.setText("Nombre empresa");
         jLabel49.setBackground(new java.awt.Color(37, 37, 37));
         jLabel49.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel49.setForeground(new java.awt.Color(37, 37, 37));
-        jLabel49.setText("Nombre empresa");
 
+        jLabel53.setText("Celular");
         jLabel53.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel53.setForeground(new java.awt.Color(37, 37, 37));
-        jLabel53.setText("Celular");
         jLabel53.setToolTipText("");
 
+        jLabel54.setText("Dirección");
         jLabel54.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel54.setForeground(new java.awt.Color(37, 37, 37));
-        jLabel54.setText("Dirección");
 
         btnGuardarConfiguracion.setText("Guardar cambios");
         btnGuardarConfiguracion.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1890,13 +1911,13 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        jLabel55.setText("CUIT");
         jLabel55.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel55.setForeground(new java.awt.Color(37, 37, 37));
-        jLabel55.setText("CUIT");
 
+        jLabel56.setText("Mensajes de WhatsApp");
         jLabel56.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel56.setForeground(new java.awt.Color(37, 37, 37));
-        jLabel56.setText("Mensajes de WhatsApp");
 
         txtWhatsappConfiguracion.setColumns(20);
         txtWhatsappConfiguracion.setLineWrap(true);
@@ -2714,6 +2735,12 @@ public class Inicio extends javax.swing.JFrame {
     private void txtDiaHoyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiaHoyActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDiaHoyActionPerformed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        panel.removeAll();
+        panel.add(this.panelInicial);
+        panel.repaint();
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     private void setDiaActual(){
         LocalDate fecha = LocalDate.now();
