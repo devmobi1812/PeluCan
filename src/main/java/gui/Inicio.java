@@ -2542,6 +2542,7 @@ public class Inicio extends javax.swing.JFrame {
 
     private void btnResetBuscadorMascotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnResetBuscadorMascotaMouseClicked
         cargarTablaMascotas("");
+        txtBuscadorMascotas.setText("");
     }//GEN-LAST:event_btnResetBuscadorMascotaMouseClicked
 
     private void btnBuscarMascotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarMascotaMouseClicked
