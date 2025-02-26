@@ -146,6 +146,10 @@ public class ControladoraPersistencia {
         return turnoJPA.findTurnoEntities();
     }
 
+    public List<Turno> getTurnosHistoricos(int idCliente) {
+        return turnoJPA.findTurnosHistoricos(idCliente);
+    }
+
     
 
 }

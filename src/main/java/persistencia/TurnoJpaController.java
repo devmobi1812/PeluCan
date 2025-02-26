@@ -258,6 +258,20 @@ public class TurnoJpaController implements Serializable {
         return mascotaEliminada;
     }
 
+    public List<Turno> findTurnosHistoricos(int idCliente) {
+        EntityManager em = getEntityManager();
+        try {
+            CriteriaQuery<Turno> cq = em.getCriteriaBuilder().createQuery(Turno.class);
+            Root<Turno> root = cq.from(Turno.class);
+            cq.select(root).where(em.getCriteriaBuilder().equal(root.get("cliente").get("id"), idCliente));
+            Query query = em.createQuery(cq);
+            return query.getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+
 
 }
 

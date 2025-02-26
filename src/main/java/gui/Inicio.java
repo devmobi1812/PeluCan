@@ -383,13 +383,16 @@ public class Inicio extends javax.swing.JFrame {
         panelVerCliente = new javax.swing.JPanel();
         jLabel57 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        tableClienteDetalles = new javax.swing.JTable();
+        tableTurnosClienteDetalles = new javax.swing.JTable();
         btnCrearTurnoClienteDetalle = new javax.swing.JButton();
         btnCrearMascotaClienteDetalle = new javax.swing.JButton();
         btnCerrarClienteDetalle = new javax.swing.JButton();
         jLabel64 = new javax.swing.JLabel();
         txtNombreClienteDetalle = new javax.swing.JTextField();
         jLabel63 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tableClienteDetalles = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PeluCan versión 1.0");
@@ -2028,7 +2031,7 @@ public class Inicio extends javax.swing.JFrame {
         jLabel57.setForeground(new java.awt.Color(37, 37, 37));
         jLabel57.setText("Detalle del cliente");
 
-        tableClienteDetalles.setModel(new javax.swing.table.DefaultTableModel(
+        tableTurnosClienteDetalles.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -2039,7 +2042,7 @@ public class Inicio extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane7.setViewportView(tableClienteDetalles);
+        jScrollPane7.setViewportView(tableTurnosClienteDetalles);
 
         btnCrearTurnoClienteDetalle.setText("Crear turno");
         btnCrearTurnoClienteDetalle.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2072,6 +2075,23 @@ public class Inicio extends javax.swing.JFrame {
         jLabel63.setForeground(new java.awt.Color(37, 37, 37));
         jLabel63.setText("Mascotas");
 
+        jLabel65.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(37, 37, 37));
+        jLabel65.setText("Turnos historicos");
+
+        tableClienteDetalles.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane8.setViewportView(tableClienteDetalles);
+
         javax.swing.GroupLayout panelVerClienteLayout = new javax.swing.GroupLayout(panelVerCliente);
         panelVerCliente.setLayout(panelVerClienteLayout);
         panelVerClienteLayout.setHorizontalGroup(
@@ -2080,15 +2100,17 @@ public class Inicio extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(panelVerClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelVerClienteLayout.createSequentialGroup()
-                        .addComponent(jLabel63)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(panelVerClienteLayout.createSequentialGroup()
                         .addComponent(jLabel64)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelVerClienteLayout.createSequentialGroup()
+                        .addGroup(panelVerClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel65)
+                            .addComponent(jLabel63))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelVerClienteLayout.createSequentialGroup()
                         .addGroup(panelVerClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNombreClienteDetalle, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane7)
                             .addGroup(panelVerClienteLayout.createSequentialGroup()
                                 .addGap(0, 3, Short.MAX_VALUE)
                                 .addComponent(btnCrearTurnoClienteDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2098,7 +2120,8 @@ public class Inicio extends javax.swing.JFrame {
                                 .addComponent(btnCerrarClienteDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelVerClienteLayout.createSequentialGroup()
                                 .addComponent(jLabel57)
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(36, 36, 36))))
         );
         panelVerClienteLayout.setVerticalGroup(
@@ -2112,7 +2135,11 @@ public class Inicio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel63)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel65)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(panelVerClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnCrearTurnoClienteDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2894,8 +2921,8 @@ public class Inicio extends javax.swing.JFrame {
                 cargarMascotas(cmbMascotaTurno, clienteNombre);
             }
             
-            if(tableClienteDetalles.getRowCount()>0 && tableClienteDetalles.getSelectedRow()!=-1){
-                int idMascota = Integer.parseInt(String.valueOf(tableClienteDetalles.getValueAt(tableClienteDetalles.getSelectedRow(),0)));
+            if(tableTurnosClienteDetalles.getRowCount()>0 && tableTurnosClienteDetalles.getSelectedRow()!=-1){
+                int idMascota = Integer.parseInt(String.valueOf(tableTurnosClienteDetalles.getValueAt(tableTurnosClienteDetalles.getSelectedRow(),0)));
                 
                 Mascota mascotaSelected = null;
 
@@ -2950,6 +2977,7 @@ public class Inicio extends javax.swing.JFrame {
                 cargarPantalla(this.panelVerCliente);
                 txtNombreClienteDetalle.setText(cliente.getNombre());
                 cargarTableClienteDetalle(cliente);
+                cargarTablaTurnosHistoricosCliente(cliente);
                 
                 
             }else{
@@ -2979,6 +3007,7 @@ public class Inicio extends javax.swing.JFrame {
         panel.add(cargar);
         panel.repaint();
     }
+    
     private void cargarTableClienteDetalle(Cliente cliente){
         DefaultTableModel modelo = new DefaultTableModel(){
             //filas y columnas no editables
@@ -3003,6 +3032,7 @@ public class Inicio extends javax.swing.JFrame {
         tableClienteDetalles.setModel(modelo);
         
     }
+    
     private void cargarTablaMascotas(String buscado){
         DefaultTableModel modelo = new DefaultTableModel(){
             //filas y columnas no editables
@@ -3079,6 +3109,33 @@ public class Inicio extends javax.swing.JFrame {
         
         tableTurnos.setModel(modelo);
         
+    }
+    
+    private void cargarTablaTurnosHistoricosCliente(Cliente cliente){
+        DefaultTableModel modelo = new DefaultTableModel(){
+            //filas y columnas no editables
+            @Override
+            public boolean isCellEditable(int row, int column){
+                return false;
+            }
+        };
+        
+        String titulos[] = {"ID","Mascota", "Observaciones", "Fecha", "Hora"};
+        modelo.setColumnIdentifiers(titulos);
+        
+        List<Turno> turnos = turnoController.getTurnosHistoricos(cliente.getId());
+        
+        if(turnos!=null){
+            for(Turno turno : turnos){
+                Object[] objeto = {turno.getId(), 
+                    turno.getMascota().getNombre(), 
+                    turno.getObservaciones(), 
+                    turno.getFechaHora().toLocalDate(), turno.getFechaHora().toLocalTime()};
+                modelo.addRow(objeto);
+            }
+        }
+        
+        tableTurnosClienteDetalles.setModel(modelo);
     }
     
 
@@ -3206,6 +3263,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -3217,6 +3275,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel menu;
     private javax.swing.JPanel panel;
@@ -3236,6 +3295,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JTable tableClientes;
     private javax.swing.JTable tableMascotas;
     private javax.swing.JTable tableTurnos;
+    private javax.swing.JTable tableTurnosClienteDetalles;
     private com.github.lgooddatepicker.components.TimePicker timeTurno;
     private com.github.lgooddatepicker.components.TimePicker timeTurnoEditar;
     private javax.swing.JTextField txtApellidoCliente;

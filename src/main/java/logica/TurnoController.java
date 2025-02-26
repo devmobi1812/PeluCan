@@ -42,6 +42,10 @@ public class TurnoController {
         return controlPersis.getTurnos();
     }
 
+    public List<Turno> getTurnosHistoricos(int idCliente) {
+        return controlPersis.getTurnosHistoricos(idCliente);
+    }
+
    
 
     
