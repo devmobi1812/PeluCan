@@ -55,19 +55,19 @@ public class Bienvenido extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(232, 232, 232));
 
-        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel47.setText("Bienvenido a PeluCan");
         jLabel47.setBackground(new java.awt.Color(37, 37, 37));
         jLabel47.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(37, 37, 37));
+        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel47.setText("Bienvenido a PeluCan");
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo250.png"))); // NOI18N
 
-        jLabel2.setText("Ingrese el nombre de su peluqueria");
         jLabel2.setBackground(new java.awt.Color(37, 37, 37));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(37, 37, 37));
+        jLabel2.setText("Ingrese el nombre de su peluqueria");
 
         txtNombreEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,10 +75,10 @@ public class Bienvenido extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Ingrese su numero de celular");
         jLabel3.setBackground(new java.awt.Color(37, 37, 37));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(37, 37, 37));
+        jLabel3.setText("Ingrese su número de celular");
 
         txtCelularEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
