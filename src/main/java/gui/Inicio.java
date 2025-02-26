@@ -395,7 +395,7 @@ public class Inicio extends javax.swing.JFrame {
         tableClienteDetalles = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("PeluCan versión 1.0");
+        setTitle("PeluCan");
         setIconImages(null);
         setMaximumSize(new java.awt.Dimension(835, 632));
         setMinimumSize(new java.awt.Dimension(835, 632));
@@ -2026,10 +2026,10 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        jLabel57.setText("Detalle del cliente");
         jLabel57.setBackground(new java.awt.Color(37, 37, 37));
         jLabel57.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
         jLabel57.setForeground(new java.awt.Color(37, 37, 37));
-        jLabel57.setText("Detalle del cliente");
 
         tableTurnosClienteDetalles.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2065,19 +2065,19 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        jLabel64.setText("Cliente");
         jLabel64.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel64.setForeground(new java.awt.Color(37, 37, 37));
-        jLabel64.setText("Cliente");
 
         txtNombreClienteDetalle.setEditable(false);
 
+        jLabel63.setText("Mascotas");
         jLabel63.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel63.setForeground(new java.awt.Color(37, 37, 37));
-        jLabel63.setText("Mascotas");
 
+        jLabel65.setText("Turnos historicos");
         jLabel65.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel65.setForeground(new java.awt.Color(37, 37, 37));
-        jLabel65.setText("Turnos historicos");
 
         tableClienteDetalles.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

@@ -49,7 +49,7 @@ public class Bienvenido extends javax.swing.JFrame {
         btnCrearEmpresa = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Bienvenido a PeluCan versión 1.0");
+        setTitle("Bienvenido a PeluCan");
         setResizable(false);
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
