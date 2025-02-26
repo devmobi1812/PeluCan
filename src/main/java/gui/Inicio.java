@@ -2502,7 +2502,7 @@ public class Inicio extends javax.swing.JFrame {
             if(tableClientes.getRowCount()>0 && tableClientes.getSelectedRow()!=-1){
                 int idCliente = Integer.parseInt(String.valueOf(tableClientes.getValueAt(tableClientes.getSelectedRow(),0)));
                 
-                int valor = JOptionPane.showConfirmDialog(rootPane, "¿Deseas eliminar el cliente, sus mascotas y sus turnos asociados?", "Pregunta", WIDTH, JOptionPane.QUESTION_MESSAGE);
+                int valor = JOptionPane.showConfirmDialog(rootPane, "¿Deseas eliminar el cliente, sus mascotas y sus turnos asociados? Tambien eliminara los turnos historicos afectando a la estadistica.", "Pregunta", WIDTH, JOptionPane.QUESTION_MESSAGE);
                 if(valor==0){
                     clienteController.eliminarCliente(idCliente);
                     JOptionPane.showMessageDialog(rootPane, "Cliente eliminado junto a sus asociados de forma correcta", "Notificación", JOptionPane.INFORMATION_MESSAGE);
