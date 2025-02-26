@@ -1,6 +1,8 @@
 
 package gui;
 import com.formdev.flatlaf.FlatLightLaf;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -14,11 +16,18 @@ public class Bienvenido extends javax.swing.JFrame {
         try {
             UIManager.setLookAndFeel(new FlatLightLaf());
             initComponents();
-            
+            setIconImage(getIconImage());
             empresaController = new EmpresaController();
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(Bienvenido.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    //ICONO DEL JFRAME
+    @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/logo.png"));
+        return retValue;
     }
 
     /**

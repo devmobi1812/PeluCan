@@ -4,6 +4,8 @@
  */
 package gui;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 import logica.Empresa;
 import logica.EmpresaController;
@@ -24,11 +26,17 @@ public class Whatsapp extends javax.swing.JFrame {
         this.turno=turno;
         this.empresa=empresa;
         initComponents();
-        
+        setIconImage(getIconImage());
         txtCelular.setText(this.getTurno().getCliente().getCelular());
         txtTexto.setText("¡Hola "+this.getTurno().getCliente().getNombre()+"!"+this.getEmpresa().getTxtWhatsapp());
     }
     
+    //ICONO DEL JFRAME
+    @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/logo.png"));
+        return retValue;
+    }
     private Turno getTurno(){
         return this.turno;
     }
