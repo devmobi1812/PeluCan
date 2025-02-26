@@ -9,7 +9,9 @@ import jakarta.persistence.EntityManagerFactory;
 import java.io.Serializable;
 import jakarta.persistence.Query;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.Persistence;
+import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 import java.util.List;
@@ -137,5 +139,18 @@ public class EmpresaJpaController implements Serializable {
             em.close();
         }
     }
+    
+    public Empresa getEmpresa() {
+        EntityManager em = getEntityManager();
+        try {
+            TypedQuery<Empresa> query = em.createQuery("SELECT e FROM Empresa e", Empresa.class);
+            return query.getSingleResult();
+        } catch (NoResultException e) {
+            return null; // En caso de que no haya ninguna Empresa en la base de datos
+        } finally {
+            em.close();
+        }
+    }
+
     
 }

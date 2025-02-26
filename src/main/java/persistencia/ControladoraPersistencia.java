@@ -123,7 +123,7 @@ public class ControladoraPersistencia {
     }
     
     public Empresa getEmpresa(){
-        return empresaJPA.findEmpresa(2);
+        return empresaJPA.getEmpresa();
     }
 
     public void crearEmpresa(Empresa empresa) {
