@@ -11,6 +11,7 @@ gui\Inicio$48.class
 gui\Inicio$58.class
 gui\Inicio$12.class
 gui\Inicio$22.class
+gui\Inicio$65.class
 gui\Inicio$42.class
 gui\Bienvenido$3.class
 gui\Inicio$45.class
@@ -34,6 +35,7 @@ gui\Inicio$37.class
 gui\Inicio$30.class
 gui\Inicio$27.class
 gui\Inicio$60.class
+gui\Inicio$67.class
 persistencia\ControladoraPersistencia.class
 persistencia\MascotaJpaController.class
 logica\Empresa.class
@@ -43,6 +45,7 @@ gui\Whatsapp$1.class
 gui\Inicio$14.class
 gui\Inicio$54.class
 gui\Inicio$31.class
+gui\Inicio$66.class
 gui\Inicio$26.class
 persistencia\TurnoJpaController.class
 logica\Turno.class
@@ -54,15 +57,18 @@ gui\Inicio$44.class
 gui\Inicio$39.class
 gui\Bienvenido$1.class
 gui\Inicio$59.class
+gui\Inicio$64.class
 gui\PanelRound.class
 logica\Controladora.class
 gui\Inicio$56.class
 gui\Inicio$21.class
 gui\Inicio$19.class
+gui\Inicio$61.class
 persistencia\exceptions\NonexistentEntityException.class
 gui\Inicio$36.class
 gui\Inicio$41.class
 gui\Inicio$16.class
+gui\Inicio$63.class
 persistencia\ClienteJpaController.class
 gui\Inicio$10.class
 gui\Inicio$23.class
@@ -78,6 +84,7 @@ gui\Inicio$17.class
 gui\Inicio$4.class
 logica\TurnoController.class
 gui\Inicio$34.class
+gui\Inicio$62.class
 logica\PeluCan.class
 gui\Inicio$29.class
 gui\Inicio$11.class

@@ -308,7 +308,7 @@ public class Inicio extends javax.swing.JFrame {
         tableClientes = new javax.swing.JTable();
         btnCrearClientes = new javax.swing.JButton();
         btnEditarClientes = new javax.swing.JButton();
-        btnWhatsapp1 = new javax.swing.JButton();
+        btnVerDetalles = new javax.swing.JButton();
         btnResetBuscador = new javax.swing.JButton();
         txtBuscador = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
@@ -380,6 +380,16 @@ public class Inicio extends javax.swing.JFrame {
         txtCuitConfiguracion = new javax.swing.JTextField();
         jScrollPane6 = new javax.swing.JScrollPane();
         txtWhatsappConfiguracion = new javax.swing.JTextArea();
+        panelVerCliente = new javax.swing.JPanel();
+        jLabel57 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tableClienteDetalles = new javax.swing.JTable();
+        btnCrearTurnoClienteDetalle = new javax.swing.JButton();
+        btnCrearMascotaClienteDetalle = new javax.swing.JButton();
+        btnCerrarClienteDetalle = new javax.swing.JButton();
+        jLabel64 = new javax.swing.JLabel();
+        txtNombreClienteDetalle = new javax.swing.JTextField();
+        jLabel63 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PeluCan versión 1.0");
@@ -670,6 +680,12 @@ public class Inicio extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(37, 37, 37));
 
+        txtRazaMascota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRazaMascotaActionPerformed(evt);
+            }
+        });
+
         btnGuardarMascota.setText("Guardar");
         btnGuardarMascota.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -714,30 +730,27 @@ public class Inicio extends javax.swing.JFrame {
             .addGroup(panelCrearMascotaLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(panelCrearMascotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelCrearMascotaLayout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearMascotaLayout.createSequentialGroup()
-                        .addGroup(panelCrearMascotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cmbSexoMascota, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(panelCrearMascotaLayout.createSequentialGroup()
-                                .addComponent(btnLimpiarMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnCancelarMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnGuardarMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(cmbDuenioMascota, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(dateNacimientoMascota, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtRazaMascota, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtColorMascota, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNombreMascota, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addContainerGap(36, Short.MAX_VALUE))))
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel27)
+                    .addComponent(jLabel18)
+                    .addGroup(panelCrearMascotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(panelCrearMascotaLayout.createSequentialGroup()
+                            .addComponent(btnLimpiarMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+                            .addComponent(btnCancelarMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnGuardarMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(dateNacimientoMascota, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbDuenioMascota, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbSexoMascota, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtNombreMascota, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtColorMascota, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtRazaMascota, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         panelCrearMascotaLayout.setVerticalGroup(
             panelCrearMascotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -841,8 +854,11 @@ public class Inicio extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnGuardarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtNombreCliente, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelCrearClienteLayout.createSequentialGroup()
+                                .addGroup(panelCrearClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(36, 36, 36))))
         );
         panelCrearClienteLayout.setVerticalGroup(
@@ -1341,7 +1357,12 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
-        btnWhatsapp1.setText("Ver detalles");
+        btnVerDetalles.setText("Ver detalles");
+        btnVerDetalles.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVerDetallesMouseClicked(evt);
+            }
+        });
 
         btnResetBuscador.setText("🔁");
         btnResetBuscador.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1373,7 +1394,7 @@ public class Inicio extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEliminarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnWhatsapp1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnVerDetalles, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelVerClientesLayout.createSequentialGroup()
                         .addGroup(panelVerClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING)
@@ -1402,7 +1423,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addGroup(panelVerClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnCrearClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                     .addComponent(btnEditarClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnWhatsapp1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnVerDetalles, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnEliminarClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(39, 39, 39))
         );
@@ -1935,34 +1956,33 @@ public class Inicio extends javax.swing.JFrame {
                     .addGroup(panelConfiguracionLayout.createSequentialGroup()
                         .addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(552, 552, 552))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConfiguracionLayout.createSequentialGroup()
+                    .addGroup(panelConfiguracionLayout.createSequentialGroup()
                         .addGroup(panelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelConfiguracionLayout.createSequentialGroup()
+                                .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(162, 162, 162))
+                            .addComponent(jLabel47, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelConfiguracionLayout.createSequentialGroup()
+                                .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(249, 249, 249))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelConfiguracionLayout.createSequentialGroup()
+                                .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(217, 217, 217))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelConfiguracionLayout.createSequentialGroup()
+                                .addComponent(jLabel56, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(125, 125, 125)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelConfiguracionLayout.createSequentialGroup()
+                        .addGroup(panelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
                             .addComponent(txtCuitConfiguracion, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtDireccionConfiguracion, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtCelularConfiguracion, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNombreConfiguracion, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelConfiguracionLayout.createSequentialGroup()
-                                .addGap(297, 297, 297)
                                 .addComponent(btnCancelarConfiguracion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnGuardarConfiguracion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelConfiguracionLayout.createSequentialGroup()
-                                .addGroup(panelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelConfiguracionLayout.createSequentialGroup()
-                                        .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(162, 162, 162))
-                                    .addComponent(jLabel47, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelConfiguracionLayout.createSequentialGroup()
-                                        .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(249, 249, 249))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelConfiguracionLayout.createSequentialGroup()
-                                        .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(217, 217, 217))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelConfiguracionLayout.createSequentialGroup()
-                                        .addComponent(jLabel56, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(125, 125, 125)))
-                                .addGap(283, 283, 283)))
+                                .addComponent(btnGuardarConfiguracion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         panelConfiguracionLayout.setVerticalGroup(
@@ -1996,6 +2016,111 @@ public class Inicio extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
+        panelVerCliente.setBackground(new java.awt.Color(232, 232, 232));
+        panelVerCliente.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                panelVerClienteFocusLost(evt);
+            }
+        });
+
+        jLabel57.setBackground(new java.awt.Color(37, 37, 37));
+        jLabel57.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
+        jLabel57.setForeground(new java.awt.Color(37, 37, 37));
+        jLabel57.setText("Detalle del cliente");
+
+        tableClienteDetalles.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane7.setViewportView(tableClienteDetalles);
+
+        btnCrearTurnoClienteDetalle.setText("Crear turno");
+        btnCrearTurnoClienteDetalle.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCrearTurnoClienteDetalleMouseClicked(evt);
+            }
+        });
+
+        btnCrearMascotaClienteDetalle.setText("Crear mascota");
+        btnCrearMascotaClienteDetalle.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCrearMascotaClienteDetalleMouseClicked(evt);
+            }
+        });
+
+        btnCerrarClienteDetalle.setText("Cerrar");
+        btnCerrarClienteDetalle.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCerrarClienteDetalleMouseClicked(evt);
+            }
+        });
+
+        jLabel64.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel64.setForeground(new java.awt.Color(37, 37, 37));
+        jLabel64.setText("Cliente");
+
+        txtNombreClienteDetalle.setEditable(false);
+
+        jLabel63.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(37, 37, 37));
+        jLabel63.setText("Mascotas");
+
+        javax.swing.GroupLayout panelVerClienteLayout = new javax.swing.GroupLayout(panelVerCliente);
+        panelVerCliente.setLayout(panelVerClienteLayout);
+        panelVerClienteLayout.setHorizontalGroup(
+            panelVerClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelVerClienteLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(panelVerClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelVerClienteLayout.createSequentialGroup()
+                        .addComponent(jLabel63)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(panelVerClienteLayout.createSequentialGroup()
+                        .addComponent(jLabel64)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelVerClienteLayout.createSequentialGroup()
+                        .addGroup(panelVerClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtNombreClienteDetalle, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane7)
+                            .addGroup(panelVerClienteLayout.createSequentialGroup()
+                                .addGap(0, 3, Short.MAX_VALUE)
+                                .addComponent(btnCrearTurnoClienteDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnCrearMascotaClienteDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(164, 164, 164)
+                                .addComponent(btnCerrarClienteDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelVerClienteLayout.createSequentialGroup()
+                                .addComponent(jLabel57)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(36, 36, 36))))
+        );
+        panelVerClienteLayout.setVerticalGroup(
+            panelVerClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelVerClienteLayout.createSequentialGroup()
+                .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel64)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNombreClienteDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel63)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(panelVerClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnCrearTurnoClienteDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCerrarClienteDetalle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCrearMascotaClienteDetalle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(39, 39, 39))
+        );
+
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
         panel.setLayout(panelLayout);
         panelLayout.setHorizontalGroup(
@@ -2021,6 +2146,8 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(panelEditarTurno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(panelConfiguracion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(panelVerCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelLayout.setVerticalGroup(
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2045,6 +2172,8 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(panelEditarTurno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(panelConfiguracion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(panelVerCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -2075,6 +2204,7 @@ public class Inicio extends javax.swing.JFrame {
         panel.removeAll();
         panel.add(this.panelInicial);
         panel.repaint();
+        datosIniciales();
     }//GEN-LAST:event_btnInicioMouseClicked
 
     private void btnCrearClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearClienteMouseClicked
@@ -2124,7 +2254,7 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimpiarClienteMouseClicked
 
     private void btnCancelarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarClienteMouseClicked
-        cargarPantalla(this.panelInicial);
+        btnInicioMouseClicked(null);
     }//GEN-LAST:event_btnCancelarClienteMouseClicked
 
     private void btnGuardarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarClienteMouseClicked
@@ -2137,7 +2267,7 @@ public class Inicio extends javax.swing.JFrame {
                 if(clienteController.guardar(nombreCompleto,celular)){
                     JOptionPane.showMessageDialog(rootPane, "Cliente guardado con exito.", "Notificación", JOptionPane.INFORMATION_MESSAGE);
                     btnLimpiarClienteMouseClicked(null);
-                    cargarPantalla(this.panelInicial);
+                    btnInicioMouseClicked(null);
                 }else{
                     JOptionPane.showMessageDialog(rootPane, "El cliente a crear ya se encuentra registrado en el sistema.", "Error", JOptionPane.ERROR_MESSAGE);
                     
@@ -2166,7 +2296,7 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimpiarMascotaMouseClicked
 
     private void btnCancelarMascotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMascotaMouseClicked
-        cargarPantalla(panelInicial);
+        btnInicioMouseClicked(null);
         btnLimpiarMascotaMouseClicked(null);
     }//GEN-LAST:event_btnCancelarMascotaMouseClicked
 
@@ -2183,7 +2313,7 @@ public class Inicio extends javax.swing.JFrame {
             if(mascotaController.guardar(nombre, color, raza, sexo, duenio, fechaNacimiento)){
                 JOptionPane.showMessageDialog(rootPane, "Mascota guardado con exito.", "Notificación", JOptionPane.INFORMATION_MESSAGE);
                 btnLimpiarMascotaMouseClicked(null);
-                cargarPantalla(this.panelInicial);
+                btnInicioMouseClicked(null);
             }else{
                 JOptionPane.showMessageDialog(rootPane, "La mascota a crear ya existe para este cliente.", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -2225,7 +2355,7 @@ public class Inicio extends javax.swing.JFrame {
 
     private void btnCancelarTurnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarTurnoMouseClicked
         btnLimpiarTurnoMouseClicked(null);
-        cargarPantalla(this.panelInicial);
+        btnInicioMouseClicked(null);
     }//GEN-LAST:event_btnCancelarTurnoMouseClicked
 
     private void cmbMascotaTurnoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cmbMascotaTurnoFocusGained
@@ -2287,7 +2417,7 @@ public class Inicio extends javax.swing.JFrame {
                 turnoController.guardar(cliente, mascota, fechaHora, observaciones);
                 JOptionPane.showMessageDialog(rootPane, "Turno creado con exito.", "Notificación", JOptionPane.INFORMATION_MESSAGE);
                 btnLimpiarTurnoMouseClicked(null);
-                cargarPantalla(this.panelInicial);
+                btnInicioMouseClicked(null);
             }else{
                 JOptionPane.showMessageDialog(rootPane, "El turno no puede ser registrado para un dia anterior a la fecha actual.", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -2742,6 +2872,101 @@ public class Inicio extends javax.swing.JFrame {
         panel.repaint();
     }//GEN-LAST:event_jLabel3MouseClicked
 
+    private void btnCrearTurnoClienteDetalleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearTurnoClienteDetalleMouseClicked
+        try{
+            cargarPantalla(this.panelCrearTurno);
+            cargarClientes(cmbClientesTurno);
+            List<Cliente> clientes = clienteController.getClientes();
+            for(Cliente cliente : clientes){
+                if(this.getClienteEditar().getNombre().equals(cliente.getNombre())){
+                    cmbClientesTurno.setSelectedItem((Object) this.getClienteEditar().getNombre());
+                }
+            }
+
+            String clienteNombre = this.getClienteEditar().getNombre();
+            //  SI HAY UN SOLO ITEM, Y EL MISMO ES EL POR DEFAULT, DEBE CARGAR LOS CLIENTES DE LA BD
+            if(cmbMascotaTurno.getItemCount() == 1 && cmbMascotaTurno.getItemAt(0).equals("-")){
+                cargarMascotas(cmbMascotaTurno, clienteNombre);
+            }else{
+                cmbMascotaTurno.removeAllItems();
+                cmbMascotaTurno.addItem("-");
+                cargarMascotas(cmbMascotaTurno, clienteNombre);
+            }
+            
+            if(tableClienteDetalles.getRowCount()>0 && tableClienteDetalles.getSelectedRow()!=-1){
+                int idMascota = Integer.parseInt(String.valueOf(tableClienteDetalles.getValueAt(tableClienteDetalles.getSelectedRow(),0)));
+                
+                Mascota mascotaSelected = null;
+
+                for(Mascota mascota : this.getClienteEditar().getMascotas()){
+                    if(mascota.getId()==idMascota){
+                        mascotaSelected=mascota;
+                    }
+                }
+
+                if(mascotaSelected==null){
+                    return;
+                }
+                List<Mascota> mascotas = mascotaController.getMascotasByCliente(clienteNombre);
+                for(Mascota mascota : mascotas){
+                    if(mascotaSelected.getNombre().equals(mascota.getNombre())){
+                        cmbMascotaTurno.setSelectedItem((Object) mascotaSelected.getNombre());
+                    }
+                } 
+
+            }
+        }catch(Exception e){
+            System.out.println("Error al querer cargarle un turno al cliente desde el front: "+e);
+        }
+    }//GEN-LAST:event_btnCrearTurnoClienteDetalleMouseClicked
+
+    private void btnCrearMascotaClienteDetalleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearMascotaClienteDetalleMouseClicked
+        try{
+            cargarPantalla(this.panelCrearMascota);
+            cargarClientes(this.cmbDuenioMascota);
+            List<Cliente> clientes = clienteController.getClientes();
+            for(Cliente cliente : clientes){
+                if(this.getClienteEditar().getNombre().equals(cliente.getNombre())){
+                    cmbDuenioMascota.setSelectedItem((Object) this.getClienteEditar().getNombre());
+                }
+            }
+        }catch(Exception e){
+            System.out.println("Error al querer cargarle una mascota al cliente desde el front: "+e);
+        }
+    }//GEN-LAST:event_btnCrearMascotaClienteDetalleMouseClicked
+
+    private void panelVerClienteFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_panelVerClienteFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panelVerClienteFocusLost
+
+    private void btnVerDetallesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVerDetallesMouseClicked
+        try{
+            if(tableClientes.getRowCount()>0 && tableClientes.getSelectedRow()!=-1){
+                int idCliente = Integer.parseInt(String.valueOf(tableClientes.getValueAt(tableClientes.getSelectedRow(),0)));
+                Cliente cliente = clienteController.getCliente(idCliente);
+                this.setClienteEditar(cliente);
+                
+                cargarPantalla(this.panelVerCliente);
+                txtNombreClienteDetalle.setText(cliente.getNombre());
+                cargarTableClienteDetalle(cliente);
+                
+                
+            }else{
+                 JOptionPane.showMessageDialog(rootPane, "No hay datos o no hay datos seleccionados", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }catch(Exception e){
+            System.out.println("Error al querer ejecutar la accion de ver detalles en el cliente desde el front: "+e);
+        }
+    }//GEN-LAST:event_btnVerDetallesMouseClicked
+
+    private void btnCerrarClienteDetalleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarClienteDetalleMouseClicked
+        btnInicioMouseClicked(null);
+    }//GEN-LAST:event_btnCerrarClienteDetalleMouseClicked
+
+    private void txtRazaMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRazaMascotaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRazaMascotaActionPerformed
+
     private void setDiaActual(){
         LocalDate fecha = LocalDate.now();
         cargarTablaTurnos(fecha);
@@ -2753,7 +2978,30 @@ public class Inicio extends javax.swing.JFrame {
         panel.add(cargar);
         panel.repaint();
     }
-    
+    private void cargarTableClienteDetalle(Cliente cliente){
+        DefaultTableModel modelo = new DefaultTableModel(){
+            //filas y columnas no editables
+            @Override
+            public boolean isCellEditable(int row, int column){
+                return false;
+            }
+        };
+        String titulos[] = {"ID", "Nombre", "Sexo","Edad", "Color"};
+        modelo.setColumnIdentifiers(titulos);
+        
+        List<Mascota> mascotas = mascotaController.getMascotasByCliente(cliente.getNombre());
+        
+        if(mascotas!=null){
+            for(Mascota mascota : mascotas){
+                Object[] objeto ={mascota.getId(), mascota.getNombre(), mascota.getSexo(), 
+                    /*LO SIGUIENTE CALCULA LA EDAD->*/ String.valueOf(Period.between(mascota.getFechaNacimiento(), LocalDate.now()).getYears()), 
+                    mascota.getColor()};
+                modelo.addRow(objeto);
+            }
+        }
+        tableClienteDetalles.setModel(modelo);
+        
+    }
     private void cargarTablaMascotas(String buscado){
         DefaultTableModel modelo = new DefaultTableModel(){
             //filas y columnas no editables
@@ -2841,14 +3089,17 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelarMascota;
     private javax.swing.JButton btnCancelarTurno;
     private javax.swing.JButton btnCancelarTurno1;
+    private javax.swing.JButton btnCerrarClienteDetalle;
     private javax.swing.JPanel btnConfiguracion;
     private javax.swing.JPanel btnCrearCliente;
     private javax.swing.JButton btnCrearClienteInexistente;
     private javax.swing.JButton btnCrearClientes;
     private javax.swing.JPanel btnCrearMascota;
+    private javax.swing.JButton btnCrearMascotaClienteDetalle;
     private javax.swing.JButton btnCrearMascotaInexistente;
     private javax.swing.JButton btnCrearMascotas;
     private javax.swing.JPanel btnCrearTurno;
+    private javax.swing.JButton btnCrearTurnoClienteDetalle;
     private javax.swing.JButton btnCrearTurnos;
     private javax.swing.JButton btnDescartarClienteEditar;
     private javax.swing.JButton btnDescartarMascotaEditar;
@@ -2876,10 +3127,10 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton btnResetBuscador;
     private javax.swing.JButton btnResetBuscadorMascota;
     private javax.swing.JPanel btnVerClientes;
+    private javax.swing.JButton btnVerDetalles;
     private javax.swing.JPanel btnVerMascotas;
     private javax.swing.JPanel btnVerTurnos;
     private javax.swing.JButton btnWhatsapp;
-    private javax.swing.JButton btnWhatsapp1;
     private javax.swing.JComboBox<String> cmbClientesTurno;
     private javax.swing.JComboBox<String> cmbClientesTurnoEditar;
     private javax.swing.JComboBox<String> cmbDuenioMascota;
@@ -2945,12 +3196,15 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -2961,6 +3215,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel menu;
     private javax.swing.JPanel panel;
@@ -2972,9 +3227,11 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPanel panelEditarMascota;
     private javax.swing.JPanel panelEditarTurno;
     private javax.swing.JPanel panelInicial;
+    private javax.swing.JPanel panelVerCliente;
     private javax.swing.JPanel panelVerClientes;
     private javax.swing.JPanel panelVerMascotas;
     private javax.swing.JPanel panelVerTurnos;
+    private javax.swing.JTable tableClienteDetalles;
     private javax.swing.JTable tableClientes;
     private javax.swing.JTable tableMascotas;
     private javax.swing.JTable tableTurnos;
@@ -2998,6 +3255,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JTextField txtDireccionConfiguracion;
     private javax.swing.JTextField txtNombeMascotaEditar;
     private javax.swing.JTextField txtNombreCliente;
+    private javax.swing.JTextField txtNombreClienteDetalle;
     private javax.swing.JTextField txtNombreClienteEditar;
     private javax.swing.JTextField txtNombreConfiguracion;
     private javax.swing.JTextField txtNombreMascota;
