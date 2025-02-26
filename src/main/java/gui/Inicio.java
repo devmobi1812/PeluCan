@@ -808,7 +808,7 @@ public class Inicio extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(37, 37, 37));
         jLabel15.setToolTipText("");
 
-        jLabel16.setText("Celular");
+        jLabel16.setText("Celular (solo números)");
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(37, 37, 37));
 
@@ -952,7 +952,7 @@ public class Inicio extends javax.swing.JFrame {
         jLabel61.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel61.setForeground(new java.awt.Color(37, 37, 37));
 
-        jLabel62.setText("Cantidad de turnos historicos");
+        jLabel62.setText("Cantidad de turnos históricos");
         jLabel62.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel62.setForeground(new java.awt.Color(37, 37, 37));
 
@@ -1686,7 +1686,7 @@ public class Inicio extends javax.swing.JFrame {
         jLabel43.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(37, 37, 37));
 
-        jLabel45.setText("Celular");
+        jLabel45.setText("Celular (solo números)");
         jLabel45.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(37, 37, 37));
 
@@ -2075,7 +2075,7 @@ public class Inicio extends javax.swing.JFrame {
         jLabel63.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel63.setForeground(new java.awt.Color(37, 37, 37));
 
-        jLabel65.setText("Turnos historicos");
+        jLabel65.setText("Turnos históricos");
         jLabel65.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel65.setForeground(new java.awt.Color(37, 37, 37));
 
@@ -2823,38 +2823,6 @@ public class Inicio extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnEditarTurnosMouseClicked
 
-    private void btnGuardarConfiguracionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarConfiguracionMouseClicked
-        try{
-            String nombre= txtNombreConfiguracion.getText();
-            String celular= txtCelularConfiguracion.getText();
-            String direccion= txtDireccionConfiguracion.getText();
-            String cuit= txtCuitConfiguracion.getText();
-            String wsp= txtWhatsappConfiguracion.getText();
-            
-            if(empresaController.guardarCambios(this.getEmpresaEditar(), nombre, celular, direccion, cuit, wsp)){
-                JOptionPane.showMessageDialog(rootPane, "Los cambios se han guardado con exito.", "Notificación", JOptionPane.INFORMATION_MESSAGE);
-                btnInicioMouseClicked(null);
-            }else{
-                JOptionPane.showMessageDialog(rootPane, "Los cambios no se han guardado por algun motivo.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-            
-        }catch(Exception e){
-            System.out.println("Error al guardar los cambios de la empresa en el front: "+e);
-        }
-    }//GEN-LAST:event_btnGuardarConfiguracionMouseClicked
-
-    private void btnCancelarConfiguracionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarConfiguracionMouseClicked
-        try{
-            int valor = JOptionPane.showConfirmDialog(rootPane, "¿Desea descartar los nuevos cambios?", "Pregunta", WIDTH, JOptionPane.QUESTION_MESSAGE);
-            if(valor==0){
-                btnInicioMouseClicked(null);
-            }
-        }catch(Exception e){
-            System.out.println("Error al descartar los cambios: "+e);
-        }
-        
-    }//GEN-LAST:event_btnCancelarConfiguracionMouseClicked
-
     private void btnConfiguracionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfiguracionMouseClicked
         try{
             Empresa empresa = empresaController.getEmpresa();
@@ -2995,6 +2963,38 @@ public class Inicio extends javax.swing.JFrame {
     private void txtRazaMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRazaMascotaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRazaMascotaActionPerformed
+
+    private void btnCancelarConfiguracionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarConfiguracionMouseClicked
+        try{
+            int valor = JOptionPane.showConfirmDialog(rootPane, "¿Desea descartar los nuevos cambios?", "Pregunta", WIDTH, JOptionPane.QUESTION_MESSAGE);
+            if(valor==0){
+                btnInicioMouseClicked(null);
+            }
+        }catch(Exception e){
+            System.out.println("Error al descartar los cambios: "+e);
+        }
+
+    }//GEN-LAST:event_btnCancelarConfiguracionMouseClicked
+
+    private void btnGuardarConfiguracionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarConfiguracionMouseClicked
+        try{
+            String nombre= txtNombreConfiguracion.getText();
+            String celular= txtCelularConfiguracion.getText();
+            String direccion= txtDireccionConfiguracion.getText();
+            String cuit= txtCuitConfiguracion.getText();
+            String wsp= txtWhatsappConfiguracion.getText();
+
+            if(empresaController.guardarCambios(this.getEmpresaEditar(), nombre, celular, direccion, cuit, wsp)){
+                JOptionPane.showMessageDialog(rootPane, "Los cambios se han guardado con exito.", "Notificación", JOptionPane.INFORMATION_MESSAGE);
+                btnInicioMouseClicked(null);
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Los cambios no se han guardado por algun motivo.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+        }catch(Exception e){
+            System.out.println("Error al guardar los cambios de la empresa en el front: "+e);
+        }
+    }//GEN-LAST:event_btnGuardarConfiguracionMouseClicked
 
     private void setDiaActual(){
         LocalDate fecha = LocalDate.now();
