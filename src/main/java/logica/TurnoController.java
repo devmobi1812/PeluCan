@@ -4,6 +4,7 @@ package logica;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+
 import persistencia.ControladoraPersistencia;
 
 
@@ -22,6 +23,23 @@ public class TurnoController {
         controlPersis.guardarTurno(turno);
     }
 
+    public boolean modificar(Turno turno, String clienteNombre, String nombreMascota, LocalDateTime fechaHora, String observaciones){
+         try{
+            Cliente cliente = controlPersis.getClientByNombre(clienteNombre);
+            Mascota mascota = controlPersis.getMascotaByNameAndCliente(nombreMascota, cliente.getId());
+            
+            turno.setCliente(cliente);
+            turno.setMascota(mascota);
+            turno.setFechaHora(fechaHora);
+            turno.setObservaciones(observaciones);
+            
+            controlPersis.modificarTurno(turno);
+            return true;
+        }catch(Exception e){
+            System.out.println("Error al modificar el turno en la logica: "+e);
+            return false;
+        }
+    }
     public List<Turno> getTurnos(LocalDate fecha) {
         return controlPersis.getTurnosByFecha(fecha);
     }
@@ -44,6 +62,19 @@ public class TurnoController {
 
     public List<Turno> getTurnosHistoricos(int idCliente) {
         return controlPersis.getTurnosHistoricos(idCliente);
+    }
+
+    public Turno findTurnoByFechaHora(Turno turno, LocalDateTime fechaHora) {
+        try{
+            Turno encontrado = controlPersis.findTurnoByFechaHora(fechaHora);
+            if(turno.getId()==encontrado.getId()){
+                return null;
+            }
+            return encontrado;
+        }catch(Exception e){
+            System.out.println("Error al encontrar turno por fecha y hora: "+e);
+            return null;
+        }
     }
 
    

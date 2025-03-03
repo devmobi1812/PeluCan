@@ -2403,11 +2403,11 @@
                                       <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
                                       <Component id="cmbClientesTurnoEditar" alignment="0" max="32767" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="btnLimpiarTurno1" min="-2" pref="130" max="-2" attributes="0"/>
+                                          <Component id="btnLimpiarTurnoEditar" min="-2" pref="130" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="btnCancelarTurno1" min="-2" pref="130" max="-2" attributes="0"/>
+                                          <Component id="btnCancelarTurnoEditar" min="-2" pref="130" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="btnGuardarTurno1" min="-2" pref="130" max="-2" attributes="0"/>
+                                          <Component id="btnGuardarTurnoEditar" min="-2" pref="130" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -2451,9 +2451,9 @@
                           <Component id="jScrollPane2" pref="175" max="32767" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="btnGuardarTurno1" alignment="1" max="32767" attributes="0"/>
-                              <Component id="btnCancelarTurno1" alignment="1" max="32767" attributes="0"/>
-                              <Component id="btnLimpiarTurno1" alignment="1" min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="btnGuardarTurnoEditar" alignment="1" max="32767" attributes="0"/>
+                              <Component id="btnCancelarTurnoEditar" alignment="1" max="32767" attributes="0"/>
+                              <Component id="btnLimpiarTurnoEditar" alignment="1" min="-2" pref="31" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                       </Group>
@@ -2489,28 +2489,28 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnGuardarTurno1">
+                <Component class="javax.swing.JButton" name="btnGuardarTurnoEditar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Guardar cambios"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnGuardarTurno1MouseClicked"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnGuardarTurnoEditarMouseClicked"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnCancelarTurno1">
+                <Component class="javax.swing.JButton" name="btnCancelarTurnoEditar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Descartar"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnCancelarTurno1MouseClicked"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnCancelarTurnoEditarMouseClicked"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnLimpiarTurno1">
+                <Component class="javax.swing.JButton" name="btnLimpiarTurnoEditar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Limpiar"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnLimpiarTurno1MouseClicked"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnLimpiarTurnoEditarMouseClicked"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="cmbClientesTurnoEditar">

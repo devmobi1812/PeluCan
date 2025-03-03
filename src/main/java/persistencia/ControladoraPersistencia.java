@@ -150,6 +150,14 @@ public class ControladoraPersistencia {
         return turnoJPA.findTurnosHistoricos(idCliente);
     }
 
+    public void modificarTurno(Turno turno) {
+        try {
+            turnoJPA.edit(turno);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     
 
 }

@@ -352,9 +352,9 @@ public class Inicio extends javax.swing.JFrame {
         panelEditarTurno = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
-        btnGuardarTurno1 = new javax.swing.JButton();
-        btnCancelarTurno1 = new javax.swing.JButton();
-        btnLimpiarTurno1 = new javax.swing.JButton();
+        btnGuardarTurnoEditar = new javax.swing.JButton();
+        btnCancelarTurnoEditar = new javax.swing.JButton();
+        btnLimpiarTurnoEditar = new javax.swing.JButton();
         cmbClientesTurnoEditar = new javax.swing.JComboBox<>();
         jLabel48 = new javax.swing.JLabel();
         cmbMascotaTurnoEditar = new javax.swing.JComboBox<>();
@@ -1772,24 +1772,24 @@ public class Inicio extends javax.swing.JFrame {
         jLabel46.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(37, 37, 37));
 
-        btnGuardarTurno1.setText("Guardar cambios");
-        btnGuardarTurno1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnGuardarTurnoEditar.setText("Guardar cambios");
+        btnGuardarTurnoEditar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnGuardarTurno1MouseClicked(evt);
+                btnGuardarTurnoEditarMouseClicked(evt);
             }
         });
 
-        btnCancelarTurno1.setText("Descartar");
-        btnCancelarTurno1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCancelarTurnoEditar.setText("Descartar");
+        btnCancelarTurnoEditar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCancelarTurno1MouseClicked(evt);
+                btnCancelarTurnoEditarMouseClicked(evt);
             }
         });
 
-        btnLimpiarTurno1.setText("Limpiar");
-        btnLimpiarTurno1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnLimpiarTurnoEditar.setText("Limpiar");
+        btnLimpiarTurnoEditar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnLimpiarTurno1MouseClicked(evt);
+                btnLimpiarTurnoEditarMouseClicked(evt);
             }
         });
 
@@ -1856,11 +1856,11 @@ public class Inicio extends javax.swing.JFrame {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cmbClientesTurnoEditar, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelEditarTurnoLayout.createSequentialGroup()
-                                .addComponent(btnLimpiarTurno1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnLimpiarTurnoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnCancelarTurno1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnCancelarTurnoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnGuardarTurno1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnGuardarTurnoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelEditarTurnoLayout.createSequentialGroup()
                                 .addGroup(panelEditarTurnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel46)
@@ -1894,9 +1894,9 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(panelEditarTurnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnGuardarTurno1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCancelarTurno1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnLimpiarTurno1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnGuardarTurnoEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCancelarTurnoEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLimpiarTurnoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(72, 72, 72))
         );
 
@@ -2493,7 +2493,7 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDiaActualMouseClicked
 
     private void btnCrearTurnosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearTurnosMouseClicked
-        cargarPantalla(this.panelCrearTurno);
+        btnCrearTurnoMouseClicked(null);
     }//GEN-LAST:event_btnCrearTurnosMouseClicked
 
     private void btnEliminarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarClientesMouseClicked
@@ -2721,11 +2721,42 @@ public class Inicio extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnEditarClientesMouseClicked
 
-    private void btnGuardarTurno1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarTurno1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardarTurno1MouseClicked
+    private void btnGuardarTurnoEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarTurnoEditarMouseClicked
+        try{
+            String cliente = (String) cmbClientesTurnoEditar.getSelectedItem();
+            String mascota = (String) cmbMascotaTurnoEditar.getSelectedItem();
+            Date fecha = dateFechaTurnoEditar.getDate();
+            
+            LocalDate fechaTurno = fecha.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            LocalTime hora = timeTurnoEditar.getTime();
+            //  CONVERTIR A LOCALDATETIME DESDE UNA FECHA Y UNA HORA
+            LocalDateTime fechaHora = fechaTurno.atTime(hora);
 
-    private void btnCancelarTurno1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarTurno1MouseClicked
+            String observaciones = txtObservacionesTurnoEditar.getText();
+            if(observaciones.equals("")){
+                observaciones="Sin observaciones";
+            }
+
+            Turno turnoExistente = turnoController.findTurnoByFechaHora(this.getTurnoEditar(), fechaHora);
+            if (turnoExistente != null) {
+                JOptionPane.showMessageDialog(rootPane, "El turno ya está ocupado en el horario seleccionado.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+ 
+            if(turnoController.modificar(this.getTurnoEditar(), cliente, mascota, fechaHora, observaciones)){
+                JOptionPane.showMessageDialog(rootPane, "Turno modificado con exito.", "Notificación", JOptionPane.INFORMATION_MESSAGE);
+                btnVerTurnosMouseClicked(null);
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "El turno no puede ser modificado.", "Error", JOptionPane.ERROR_MESSAGE);
+                System.out.println("El turno no puede ser modificado.");
+            }
+             
+        }catch(Exception e){
+            System.out.println("Error al guardar los cambios del turno: "+e);
+        }
+    }//GEN-LAST:event_btnGuardarTurnoEditarMouseClicked
+
+    private void btnCancelarTurnoEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarTurnoEditarMouseClicked
         try{
             int valor = JOptionPane.showConfirmDialog(rootPane, "¿Desea descartar los nuevos cambios?", "Pregunta", WIDTH, JOptionPane.QUESTION_MESSAGE);
             if(valor==0){
@@ -2734,12 +2765,12 @@ public class Inicio extends javax.swing.JFrame {
         }catch(Exception e){
             System.out.println("Error al descartar los cambios: "+e);
         }
-    }//GEN-LAST:event_btnCancelarTurno1MouseClicked
+    }//GEN-LAST:event_btnCancelarTurnoEditarMouseClicked
 
     private void descartarCambios(){
         
     }
-    private void btnLimpiarTurno1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimpiarTurno1MouseClicked
+    private void btnLimpiarTurnoEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimpiarTurnoEditarMouseClicked
         try{
             cmbClientesTurnoEditar.removeAllItems();
             cmbClientesTurnoEditar.addItem("-");
@@ -2754,7 +2785,7 @@ public class Inicio extends javax.swing.JFrame {
         }catch(Exception e){
             System.out.println("Error al limpiar los datos del turno a editar en el front: "+e);
         }
-    }//GEN-LAST:event_btnLimpiarTurno1MouseClicked
+    }//GEN-LAST:event_btnLimpiarTurnoEditarMouseClicked
 
     private void cmbClientesTurnoEditarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cmbClientesTurnoEditarFocusGained
         // TODO add your handling code here:
@@ -3146,7 +3177,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelarConfiguracion;
     private javax.swing.JButton btnCancelarMascota;
     private javax.swing.JButton btnCancelarTurno;
-    private javax.swing.JButton btnCancelarTurno1;
+    private javax.swing.JButton btnCancelarTurnoEditar;
     private javax.swing.JButton btnCerrarClienteDetalle;
     private javax.swing.JPanel btnConfiguracion;
     private javax.swing.JPanel btnCrearCliente;
@@ -3174,14 +3205,14 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton btnGuardarMascota;
     private javax.swing.JButton btnGuardarMascotaEditar;
     private javax.swing.JButton btnGuardarTurno;
-    private javax.swing.JButton btnGuardarTurno1;
+    private javax.swing.JButton btnGuardarTurnoEditar;
     private javax.swing.JPanel btnInicio;
     private javax.swing.JButton btnLimpiarCliente;
     private javax.swing.JButton btnLimpiarClienteEditar;
     private javax.swing.JButton btnLimpiarMascota;
     private javax.swing.JButton btnLimpiarMascotaEditar;
     private javax.swing.JButton btnLimpiarTurno;
-    private javax.swing.JButton btnLimpiarTurno1;
+    private javax.swing.JButton btnLimpiarTurnoEditar;
     private javax.swing.JButton btnResetBuscador;
     private javax.swing.JButton btnResetBuscadorMascota;
     private javax.swing.JPanel btnVerClientes;
